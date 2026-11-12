@@ -3,7 +3,7 @@ const phoneNumber = "5518997844443";
 const menuItems = [
   {
     name: "Ouro Negro",
-    category: "Assinaturas",
+    category: "Pão brioche",
     description: "Blend angus 180g, cheddar inglês, cebola brûlée, aioli de alho negro e brioche.",
     price: 46,
     image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=900&h=700&fit=crop&auto=format",
@@ -11,7 +11,7 @@ const menuItems = [
   },
   {
     name: "Bourbon Smoke",
-    category: "Defumados",
+    category: "Pão de hambúrguer",
     description: "Costela desfiada por 12h, glaze de bourbon, picles artesanal e coleslaw.",
     price: 52,
     image: "https://images.unsplash.com/photo-1550547660-d9450f859349?w=900&h=700&fit=crop&auto=format",
@@ -19,7 +19,7 @@ const menuItems = [
   },
   {
     name: "Trufa & Brie",
-    category: "Assinaturas",
+    category: "Pão de hambúrguer",
     description: "Angus 160g, brie maçaricado, cogumelos, rúcula e maionese de trufas.",
     price: 58,
     image: "https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?w=900&h=700&fit=crop&auto=format",
@@ -27,7 +27,7 @@ const menuItems = [
   },
   {
     name: "Red Ember",
-    category: "Defumados",
+    category: "Pão de hambúrguer",
     description: "Double smash, cheddar, bacon caramelizado, jalapeño e molho ember picante.",
     price: 49,
     image: "https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=900&h=700&fit=crop&auto=format",
@@ -35,7 +35,7 @@ const menuItems = [
   },
   {
     name: "Garden Noir",
-    category: "Vegetariano",
+    category: "Pão de hambúrguer",
     description: "Portobello na brasa, queijo meia cura, tomate confit e pesto de castanhas.",
     price: 44,
     image: "https://images.unsplash.com/photo-1520072959219-c595dc870360?w=900&h=700&fit=crop&auto=format",
@@ -43,7 +43,7 @@ const menuItems = [
   },
   {
     name: "Fritas de Trufa",
-    category: "Acompanhamentos",
+    category: "Porções",
     description: "Batatas crocantes, parmesão curado, flor de sal e azeite trufado.",
     price: 29,
     image: "https://images.unsplash.com/photo-1630384060421-cb20d0e0649d?w=900&h=700&fit=crop&auto=format",
@@ -51,7 +51,7 @@ const menuItems = [
   },
 ];
 
-const categories = ["Todos", "Assinaturas", "Defumados", "Vegetariano", "Acompanhamentos"];
+const categories = ["Todos", "Baguete", "Pão brioche", "Pão de dog", "Pão de hambúrguer", "Porções", "Bebidas"];
 const cart = new Map();
 const deliveryFee = 5;
 const money = (value) => value.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
@@ -98,7 +98,7 @@ function renderMenu() {
         </button>
       </div>
     </article>
-  `).join("");
+  `).join("") || `<p class="muted">Nenhum item disponível nesta categoria no momento.</p>`;
 }
 
 function showToast(message) {
